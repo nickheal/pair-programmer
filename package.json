@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
+    "clean": "rm -rf ./__sapper__",
+    "export": "sapper export",
     "build": "sapper build",
     "deploy": "npm run clean && npm run export && node ./scripts/gh-pages.js",
-    "export": "sapper export",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
