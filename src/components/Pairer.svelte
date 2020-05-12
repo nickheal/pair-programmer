@@ -44,11 +44,13 @@
 
 <List>
   {#each pairs as item}
-    <Item class="mdc-layout-grid__inner">
-      <Text class="mdc-layout-grid__cell--span-{item.length === 3 ? '4' : '6'}">{item[0]}</Text>
-      <Text class="mdc-layout-grid__cell--span-{item.length === 3 ? '4' : '6'}">{item[1]}</Text>
+    <Item>
+      {item[0]}
+      &
+      {item[1]}
       {#if item.length === 3}
-        <Text class="mdc-layout-grid__cell--span-4">{item[2]}</Text>
+        &
+        {item[2]}
       {/if}
     </Item>
   {/each}

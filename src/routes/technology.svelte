@@ -7,6 +7,16 @@
     <div class="mdc-layout-grid__cell--span-4">
       <h1 class="mdc-typography--headline2">Technology</h1>
 
+      <h2 class="mdc-typography--headline4">Source code</h2>
+
+      <p class="mdc-typography--body1">
+				You can view the <a href="https://github.com/nickheal/pair-programmer/tree/develop" target="_blank">full source code on GitHub</a>.
+			</p>
+
+      <p class="mdc-typography--body1">
+				Contributions are actively welcomed.
+			</p>
+
       <h2 class="mdc-typography--headline4">Svelte/Sapper</h2>
 
 			<p class="mdc-typography--body1">

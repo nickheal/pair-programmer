@@ -7,6 +7,10 @@
   function onAdd(newValue) {
     items = [...items, newValue];
   }
+
+  function onDelete(itemToDelete) {
+    items = items.filter((item) => item !== itemToDelete);
+  }
 </script>
 
 <svelte:head>
@@ -24,12 +28,15 @@
       <p class="mdc-typography--body1">
         You can find more information about <a href="https://en.wikipedia.org/wiki/Pair_programming" target="_blank">pair-programming on wikipedia</a>.
       </p>
+      <p class="mdc-typography--body1">
+        If you want you can <a href="#">read about my experience writing this app</a>.
+      </p>
     </div>
 
     <div class="mdc-layout-grid__cell--span-6">
       <p class="mdc-typography--body1">1. Add everything you want to pair to this list.</p>
 
-      <ListBuilder {items} {onAdd} />
+      <ListBuilder {items} {onAdd} {onDelete} />
     </div>
 
     <div class="mdc-layout-grid__cell--span-6">
