@@ -8,6 +8,8 @@ const dev = NODE_ENV === 'development';
 
 polka() // You can also use Express
 	.use(
+		/** added to work in GitHub pages */
+		'/pair-programmer',
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()

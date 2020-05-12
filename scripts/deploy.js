@@ -4,10 +4,10 @@ ghpages.publish(
     '__sapper__/export',
     {
         branch: 'master',
-        repo: <your-githubrepo.git>,
+        repo: 'https://github.com/nickheal/pair-programmer.git',
         user: {
-            name: '<Your-username>',
-            email: '<Your-github-emailId>'
+            name: 'nickheal',
+            email: 'nick3_4@hotmail.com'
         }
     },
     () => {
