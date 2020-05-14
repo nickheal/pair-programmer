@@ -21,3 +21,5 @@ Check out the project.
 Install the dependencies with `npm install`.
 
 Run the project with `npm run dev`.
+
+Navigate to `http://localhost:3000/pair-programmer` in your browser.

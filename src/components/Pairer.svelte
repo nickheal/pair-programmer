@@ -1,48 +1,20 @@
 <script>
   import Button, {Label} from '@smui/button';
   import List, {Item, Text} from '@smui/list';
+  import generatePairs from '../utils/generatePairs';
 
   export let items;
 
   let pairs = [];
 
-  function shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  }
-
-  function generatePairs() {
-    pairs = shuffle(items).reduce((pairs, item, index, array) => {
-      const lastItem = index === array.length - 1;
-      const lastInAccIncomplete = pairs[pairs.length - 1].length < 2;
-
-      if (lastItem || lastInAccIncomplete) {
-        pairs[pairs.length - 1] = [...pairs[pairs.length - 1], item];
-      } else {
-        pairs = [...pairs, [item]]
-      }
-      
-      return pairs;
-    }, [[]]);
+  function onGeneratePairs() {
+    pairs = generatePairs(items);
   }
 </script>
 
 <Button
   data-testid="generate-pairs-button"
-  on:click={generatePairs}
+  on:click={onGeneratePairs}
 >
   <Label>Generate pairs</Label>
 </Button>
@@ -51,9 +23,11 @@
   {#each pairs as item}
     <Item data-testid="pair">
       {item[0]}
-      &
-      {item[1]}
-      {#if item.length === 3}
+      {#if item.length >= 2}
+        &
+        {item[1]}
+      {/if}
+      {#if item.length >= 3}
         &
         {item[2]}
       {/if}

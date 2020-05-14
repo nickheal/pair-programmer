@@ -1,15 +1,20 @@
 <script>
+  import itemStore from '../stores/items';
 	import ListBuilder from '../components/ListBuilder';
   import Pairer from '../components/Pairer';
-  
+
   let items = [];
 
+  itemStore.subscribe(storedItems => {
+		items = storedItems;
+	});
+
   function onAdd(newValue) {
-    items = [...items, newValue];
+    itemStore.update(storedItems => [...storedItems, newValue]);
   }
 
   function onDelete(itemToDelete) {
-    items = items.filter((item) => item !== itemToDelete);
+    itemStore.update(storedItems => storedItems.filter((item) => item !== itemToDelete));
   }
 </script>
 
