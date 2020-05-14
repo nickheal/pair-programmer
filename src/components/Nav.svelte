@@ -15,7 +15,13 @@
 <TopAppBar variant="static" dense color="primary">
 	<Row>
 		<Section>
-			<IconButton class="material-icons" on:click={() => menuOpen = !menuOpen}>menu</IconButton>
+			<IconButton
+				class="material-icons"
+				data-testid="nav-control"
+				on:click={() => menuOpen = !menuOpen}
+			>
+				menu
+			</IconButton>
 			<Title>Pair programmer</Title>
 		</Section>
 	</Row>
@@ -24,19 +30,34 @@
 <Drawer variant="modal" bind:this={menuDrawer} bind:open={menuOpen}>
 	<Content>
 		<List>
-			<Item href="." on:click={() => menuOpen = false} activated={segment === undefined ? "page" : undefined}>
+			<Item
+				data-testid="nav-home"
+				href="."
+				on:click={() => menuOpen = false}
+				activated={segment === undefined ? "page" : undefined}
+			>
 				<Graphic class="material-icons" aria-hidden="true">home</Graphic>
 				<Text>Home</Text>
 			</Item>
 
 			<Separator nav />
 			<Subheader component={H6}>About</Subheader>
-			<Item href="purpose" on:click={() => menuOpen = false} activated={segment === 'purpose' ? "page" : undefined}>
+			<Item
+				data-testid="nav-purpose"
+				href="purpose"
+				on:click={() => menuOpen = false}
+				activated={segment === 'purpose' ? "page" : undefined}
+			>
 				<Graphic class="material-icons" aria-hidden="true">supervised_user_circle</Graphic>
 				<Text>Purpose</Text>
 			</Item>
 
-			<Item href="technology" on:click={() => menuOpen = false} activated={segment === 'technology' ? "page" : undefined}>
+			<Item
+				data-testid="nav-technology"
+				href="technology"
+				on:click={() => menuOpen = false}
+				activated={segment === 'technology' ? "page" : undefined}
+			>
 				<Graphic class="material-icons" aria-hidden="true">memory</Graphic>
 				<Text>Technology</Text>
 			</Item>

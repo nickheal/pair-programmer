@@ -40,11 +40,16 @@
   }
 </script>
 
-<Button on:click={generatePairs}><Label>Generate pairs</Label></Button>
+<Button
+  data-testid="generate-pairs-button"
+  on:click={generatePairs}
+>
+  <Label>Generate pairs</Label>
+</Button>
 
 <List>
   {#each pairs as item}
-    <Item>
+    <Item data-testid="pair">
       {item[0]}
       &
       {item[1]}

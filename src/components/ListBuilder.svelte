@@ -22,6 +22,7 @@
 </script>
 
 <Textfield
+  data-testid="add-item-input"
   type="text"
   withTrailingIcon={valueClickable !== ''}
   bind:value={valueClickable}
@@ -36,9 +37,15 @@
 
 <List>
   {#each items as item}
-    <Item>
+    <Item data-testid={`item-${item}`}>
       <Text>{item}</Text>
-      <Meta class="material-icons" on:click={() => deleteItem(item)}>delete</Meta>
+      <Meta
+        class="material-icons"
+        data-testid={`delete-item-${item}`}
+        on:click={() => deleteItem(item)}
+      >
+        delete
+      </Meta>
     </Item>
   {/each}
 </List>

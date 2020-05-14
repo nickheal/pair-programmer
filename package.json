@@ -7,11 +7,12 @@
     "clean": "rm -rf ./__sapper__",
     "export": "sapper export --basepath pair-programmer",
     "build": "sapper build",
-    "deploy": "npm run clean && npm run export && mv ./__sapper__/export/pair-programmer/* ./__sapper__/export && node ./scripts/deploy.js",
+    "deploy": "npm run e2e && npm run clean && npm run export && mv ./__sapper__/export/pair-programmer/* ./__sapper__/export && node ./scripts/deploy.js",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "e2e": "run-p --race dev cy:run",
+    "test": "jest"
   },
   "dependencies": {
     "@material/layout-grid": "^6.0.0",
@@ -21,6 +22,8 @@
     "sirv": "^0.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@smui/button": "^1.0.0-beta.21",
     "@smui/common": "^1.0.0-beta.21",
     "@smui/drawer": "^1.0.0-beta.21",
@@ -28,8 +31,13 @@
     "@smui/list": "^1.0.0-beta.21",
     "@smui/textfield": "^1.0.0-beta.21",
     "@smui/top-app-bar": "^1.0.0-beta.21",
+    "@testing-library/svelte": "^3.0.0",
+    "babel-jest": "^26.0.1",
     "css-loader": "^3.5.3",
+    "cypress": "^4.5.0",
     "gh-pages": "^2.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.0.1",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
@@ -39,6 +47,7 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "svelte": "^3.0.0",
+    "svelte-jester": "^1.0.5",
     "svelte-loader": "^2.9.0",
     "webpack": "^4.7.0"
   }
