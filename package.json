@@ -7,7 +7,7 @@
     "clean": "rm -rf ./__sapper__",
     "export": "sapper export --basepath pair-programmer",
     "build": "sapper build",
-    "deploy": "npm run e2e && npm run clean && npm run export && mv ./__sapper__/export/pair-programmer/* ./__sapper__/export && node ./scripts/deploy.js",
+    "deploy": "npm test && npm run e2e && npm run clean && npm run export && mv ./__sapper__/export/pair-programmer/* ./__sapper__/export && node ./scripts/deploy.js",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
