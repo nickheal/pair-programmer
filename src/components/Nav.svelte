@@ -6,7 +6,7 @@
 	import LinearProgress from '@smui/linear-progress';
 	import List, {Item, Text, Graphic, Separator, Subheader} from '@smui/list';
 	import H6 from '@smui/common/H6.svelte';
-	import { store } from '../stores/tour';
+	import { TourItem } from '../stores/tour';
 	import './Nav.scss';
 	
 	let menuOpen = false;
@@ -33,7 +33,7 @@
 <TopAppBar variant="static" dense color="primary">
 	<Row>
 		<Section>
-			<div bind:this={store.register} data-tour="Click here to access the navigation.">
+			<TourItem message="Click here to open the navigation.">
 				<IconButton
 					class="material-icons"
 					data-testid="nav-control"
@@ -41,11 +41,11 @@
 				>
 					menu
 				</IconButton>
-			</div>
+			</TourItem>
 			<Title>Pair programmer</Title>
 		</Section>
 		<Section align="end" toolbar>
-			<div bind:this={store.register} data-tour={`Click here to start a 25 minute timer. When the timer runs down take a few minutes break, and then switch who 'drives', and who assists. This is based on the <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Pomodoro Technique</a>.`}>
+			<TourItem message={`Click here to start a 25 minute timer. When the timer runs down take a few minutes break, and then switch who 'drives', and who assists. This is based on the <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Pomodoro Technique</a>.`}>
 				<IconButton
 					class="material-icons"
 					aria-label="Timer"
@@ -53,7 +53,7 @@
 				>
 					schedule
 				</IconButton>
-			</div>
+			</TourItem>
 		</Section>
 	</Row>
 </TopAppBar>

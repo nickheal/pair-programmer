@@ -2,7 +2,7 @@
   import List, {Item, Meta, Text} from '@smui/list';
 	import Textfield, {Input, Textarea} from '@smui/textfield';
   import Icon from '@smui/textfield/icon/index';
-  import { store } from '../stores/tour';
+  import { TourItem } from '../stores/tour';
 
   export let items;
   export let onAdd;
@@ -22,7 +22,7 @@
   }
 </script>
 
-<div bind:this={store.register} data-tour="Add the items you want to pair to this list.">
+<TourItem message="Add the items you want to pair to this list.">
   <Textfield
     data-testid="add-item-input"
     type="text"
@@ -36,7 +36,7 @@
       <Icon class="material-icons" role="button" on:click={add}>send</Icon>
     {/if}
   </Textfield>
-</div>
+</TourItem>
 
 <List>
   {#each items as item}

@@ -1,5 +1,5 @@
 <script>
-  import { store } from '../stores/tour';
+  import { stop, subscribe } from '../stores/tour';
 
   export let TourTip;
   
@@ -7,13 +7,13 @@
   let currentStep = 0;
   $: atEnd = currentStep === items.length - 1;
 
-  store.subscribe(store => {
+  subscribe(store => {
     ({active, items} = store);
   });
 
   function onClickNext() {
     if (atEnd) {
-      store.stop();
+      stop();
       return;
     }
     currentStep++;

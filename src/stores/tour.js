@@ -6,25 +6,34 @@ const tourStore = writable({
 });
 
 export { default as Tour } from './Tour.svelte';
+export { default as TourItem } from './TourItem.svelte';
 
-export const store = {
-  set register(el) {
-    tourStore.update(store => ({
-      ...store,
-      items: [...store.items, el]
-    }));
-  },
-  run() {
-    tourStore.update(store => ({
-      ...store,
-      active: true
-    }));
-  },
-  stop() {
-    tourStore.update(store => ({
-      ...store,
-      active: false
-    }));
-  },
-  subscribe: tourStore.subscribe.bind(tourStore)
+export function register(el) {
+  tourStore.update(store => ({
+    ...store,
+    items: [...store.items, el]
+  }));
+};
+
+export function run() {
+  tourStore.update(store => ({
+    ...store,
+    active: true
+  }));
+};
+
+export function stop() {
+  tourStore.update(store => ({
+    ...store,
+    active: false
+  }));
+};
+
+export function unregister(el) {
+  tourStore.update(store => ({
+    ...store,
+    items: store.items.splice(store.items.indexOf(el), 1)
+  }));
 }
+
+export const subscribe = tourStore.subscribe.bind(tourStore);

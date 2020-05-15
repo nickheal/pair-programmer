@@ -2,7 +2,7 @@
   import Button, {Label} from '@smui/button';
   import List, {Item, Text} from '@smui/list';
   import generatePairs from '../utils/generatePairs';
-  import { store } from '../stores/tour';
+  import { TourItem } from '../stores/tour';
 
   export let items;
 
@@ -13,14 +13,14 @@
   }
 </script>
 
-<div bind:this={store.register} data-tour="Once the list is complete, click here to pair the items.">
+<TourItem message="Once the list is complete, click here to pair the items.">
   <Button
     data-testid="generate-pairs-button"
     on:click={onGeneratePairs}
   >
     <Label>Generate pairs</Label>
   </Button>
-</div>
+</TourItem>
 
 <List>
   {#each pairs as item}
