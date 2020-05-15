@@ -6,7 +6,7 @@
 	import LinearProgress from '@smui/linear-progress';
 	import List, {Item, Text, Graphic, Separator, Subheader} from '@smui/list';
 	import H6 from '@smui/common/H6.svelte';
-	import { TourItem } from '../stores/tour';
+	import { TourItem } from 'svelte-tour';
 	import './Nav.scss';
 	
 	let menuOpen = false;

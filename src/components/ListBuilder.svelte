@@ -2,7 +2,7 @@
   import List, {Item, Meta, Text} from '@smui/list';
 	import Textfield, {Input, Textarea} from '@smui/textfield';
   import Icon from '@smui/textfield/icon/index';
-  import { TourItem } from '../stores/tour';
+  import { TourItem } from 'svelte-tour';
 
   export let items;
   export let onAdd;

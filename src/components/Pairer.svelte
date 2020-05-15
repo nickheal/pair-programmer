@@ -2,7 +2,7 @@
   import Button, {Label} from '@smui/button';
   import List, {Item, Text} from '@smui/list';
   import generatePairs from '../utils/generatePairs';
-  import { TourItem } from '../stores/tour';
+  import { TourItem } from 'svelte-tour';
 
   export let items;
 
