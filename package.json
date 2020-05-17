@@ -50,7 +50,7 @@
     "svelte": "^3.0.0",
     "svelte-jester": "^1.0.5",
     "svelte-loader": "^2.9.0",
-    "svelte-tour": "^1.0.1",
+    "svelte-tour": "^1.0.3",
     "webpack": "^4.7.0"
   }
 }

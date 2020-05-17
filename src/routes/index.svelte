@@ -34,7 +34,7 @@
         You can find more information about <a href="https://en.wikipedia.org/wiki/Pair_programming" target="_blank">pair-programming on wikipedia</a>.
       </p>
       <p class="mdc-typography--body1">
-        If you want you can <a href="#">read about my experience writing this app</a>.
+        If you want you can <a href="https://medium.com/@nickhealweb/has-svelte-come-of-age-86ff5c76da9">read about my experience writing this app</a>.
       </p>
     </div>
 
